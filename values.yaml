@@ -1,17 +1,13 @@
 replicaCount: 3
-
 image:
   repository: ganeshnimmakayala/jenkinsci
-  tag: latest
+  tag: ${IMAGE_TAG}
   pullPolicy: IfNotPresent
-
 container:
   port: 80
-
 service:
   type: LoadBalancer
   port: 80
   targetPort: 80
 ingress:
   enabled: false
-
