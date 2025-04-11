@@ -4,7 +4,7 @@ pipeline {
     environment {
         GIT_REPO = 'https://github.com/GaneshNimmakayala/cd_repo.git'
         BRANCH = 'master'
-        IMAGE_TAG = ${BUILD_NUMBER}
+        IMAGE_TAG = "${BUILD_NUMBER}"  // ✅ Fixed interpolation
     }
 
     stages {
@@ -27,14 +27,13 @@ pipeline {
 
         stage('Commit and Push') {
             steps {
-                    sh '''
-                        git config user.name "GaneshNimmakayal"
-                        git config user.email "ganeshnimmakayala6@gmail.com"
-                        git add values.yaml
-                        git commit -m "ci: update image tag to ${IMAGE_TAG}" || echo "No changes to commit"
-                        git push origin ${BRANCH}
-                    '''
-                }
+                sh '''
+                    git config user.name "GaneshNimmakayala"
+                    git config user.email "ganeshnimmakayala6@gmail.com"
+                    git add values.yaml
+                    git commit -m "ci: update image tag to ${IMAGE_TAG}" || echo "No changes to commit"
+                    git push origin ${BRANCH}
+                '''
             }
         }
 
@@ -44,4 +43,6 @@ pipeline {
             }
         }
     }
+}
+
 
