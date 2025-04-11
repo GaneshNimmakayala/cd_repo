@@ -13,15 +13,16 @@ pipeline {
             }
         }
 
-        stage('Update values.yaml') {
+       stage('Update values.yaml') {
             steps {
-                sh '''
-                    echo "Updating image tag to ${IMAGE_TAG}"
-                    yq e '.image.tag = "${IMAGE_TAG}"' -i values.yaml
-                    cat values.yaml
-                '''
-            }
+                sh """
+                   echo "Updating image tag to ${IMAGE_TAG}"
+                   yq e '.image.tag = "${IMAGE_TAG}"' -i values.yaml
+                   cat values.yaml
+                   """
+               }
         }
+
 
         stage('Commit and Push') {
             steps {
