@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        GIT_REPO = 'git@github.com:GaneshNimmakayala/cd_repo.git'
+        GIT_REPO = 'https://github.com/GaneshNimmakayala/cd_repo.git'
         BRANCH = 'master'
         IMAGE_TAG = ${BUILD_NUMBER}
     }
