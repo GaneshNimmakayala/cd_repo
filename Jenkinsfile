@@ -31,7 +31,7 @@ pipeline {
                     git config user.email "ganeshnimmakayala6@gmail.com"
                     git add values.yaml
                     git commit -m "ci: update image tag to ${IMAGE_TAG}" || echo "No changes to commit"
-                    git push origin ${BRANCH}
+                    git push --set-upstream origin ${BRANCH}
                 '''
             }
         }
