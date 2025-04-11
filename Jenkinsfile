@@ -17,7 +17,7 @@ pipeline {
             steps {
                 sh '''
                     echo "Updating image tag to ${IMAGE_TAG}"
-                    yq e ".image.tag = \"${IMAGE_TAG}\"" -i values.yaml
+                    yq e '.image.tag = "${IMAGE_TAG}"' -i values.yaml
                     cat values.yaml
                 '''
             }
