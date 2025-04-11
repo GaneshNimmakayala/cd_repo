@@ -1,7 +1,7 @@
 replicaCount: 3
 image:
   repository: ganeshnimmakayala/jenkinsci
-  tag: "3"
+  tag: "4"
   pullPolicy: IfNotPresent
 container:
   port: 80
