@@ -2,9 +2,7 @@ pipeline {
     agent any
 
     environment {
-        GIT_REPO = 'https://github.com/GaneshNimmakayala/cd_repo.git'
-        BRANCH = 'master'
-        IMAGE_TAG = "${BUILD_NUMBER}"  // ✅ Fixed interpolation
+        IMAGE_TAG = "${BUILD_NUMBER}" 
     }
 
     stages {
