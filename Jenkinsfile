@@ -10,8 +10,8 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git branch: "${BRANCH}",
-                    url: "${GIT_REPO}"
+                git credentialsId: 'github-token', url: 'https://github.com/GaneshNimmakayala/cd_repo.git'
+
             }
         }
 
