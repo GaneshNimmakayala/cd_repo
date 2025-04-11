@@ -7,7 +7,7 @@ container:
   port: 80
 service:
   type: LoadBalancer
-  port: 8082
-  targetPort: 80
+  port: 80
+  targetPort: 8082
 ingress:
   enabled: false
