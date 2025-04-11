@@ -1,8 +1,8 @@
 replicaCount: 3
 
 image:
-  repository: nginx
-  tag: stable
+  repository: ganeshnimmakayala/jenkinsci
+  tag: latest
   pullPolicy: IfNotPresent
 
 container:
