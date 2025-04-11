@@ -33,7 +33,7 @@ pipeline {
                         git config user.email "ganeshnimmakayala6@gmail.com"
                         git remote set-url origin https://${GIT_USER}:${GIT_PASS}@github.com/GaneshNimmakayala/cd_repo.git
                         git add values.yaml
-                        git commit -m "ci: update image tag to ${IMAGE_TAG}" || echo "No changes to commit"
+                        git commit -m "ci: update image tag to ${IMAGE_TAG}"
                         git push --set-upstream origin ${BRANCH}
                 '''
             }
